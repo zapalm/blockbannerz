@@ -3,7 +3,7 @@
  * Block Banners: module for PrestaShop 1.5-1.6
  *
  * @author zapalm <zapalm@ya.ru>
- * @copyright (c) 2011-2015, zapalm
+ * @copyright (c) 2013-2015, zapalm
  * @link http://prestashop.modulez.ru/en/ Homepage
  * @license http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
@@ -17,7 +17,7 @@ class BlockBannerz extends Module
 	{
 		$this->name = 'blockbannerz';
 		$this->tab = 'advertising_marketing';
-		$this->version = '0.1';
+		$this->version = '0.1.1';
 		$this->author = 'zapalm';
 		$this->need_instance = 0;
 		$this->ps_versions_compliancy = array('min' => '1.5.0.0', 'max' => '1.6.1.0');
