@@ -43,6 +43,67 @@ class BlockBannerz extends Module
 		return parent::uninstall();
 	}
 
+	public function getContent()
+	{
+		$output = '';
+		$errors = array();
+		$banners = array('top', 'home1', 'home2');
+		$upload_dir = _PS_MODULE_DIR_.$this->name.'/img/';
+
+		if (Tools::isSubmit('submit_save'))
+		{
+			foreach ($banners as $banner)
+			{
+				if (isset($_FILES[$banner]) && !empty($_FILES[$banner]['tmp_name']))
+				{
+					if ($msg = ImageManager::validateUpload($_FILES[$banner], Tools::convertBytes(ini_get('upload_max_filesize'))))
+						$errors[] = $msg;
+					else
+					{
+						// copy the image to the module directory with its new name
+						// todo: it saves file always with jpg extension
+						if (!move_uploaded_file($_FILES[$banner]['tmp_name'], $upload_dir.$banner.'.jpg'))
+							$errors[] = $this->l('Error while moving uploaded file').': '.$banner;
+					}
+				}
+			}
+
+			$output .= $errors ? $this->displayError(implode('<br/>', $errors)) : $this->displayConfirmation($this->l('Settings updated'));
+		}
+
+		return $output.$this->displayForm();
+	}
+
+	public function displayForm()
+	{
+		return '
+			<form action="'.$_SERVER['REQUEST_URI'].'" method="post"  enctype="multipart/form-data">
+				<fieldset>
+					<legend><img src="'.$this->_path.'logo.gif" alt="" title="" />'.$this->l('Settings').'</legend>
+					<label>'.$this->l('Change top banner').'</label>
+					<div class="margin-form">
+						<input type="file" name="top" />
+					</div>
+					<label>'.$this->l('Change home left banner').'</label>
+					<div class="margin-form">
+						<input type="file" name="home1" />
+					</div>
+					<label>'.$this->l('Change home right banner').'</label>
+					<div class="margin-form">
+						<input type="file" name="home2" />
+					</div>
+					<div class="margin-form">
+						<input type="submit" name="submit_save" value="'.$this->l('Save').'" class="button" />
+					</div>
+					<p>'.
+						$this->l('Maximum allowed size for uploaded files:').' '.ini_get('upload_max_filesize').'<br/>'.
+						$this->l('Maximum number of files that can be uploaded at the same time:').' '.ini_get('max_file_uploads').'
+					</p>
+				</fieldset>
+			</form>
+		';
+	}
+
 	private function _hookCommon()
 	{
 		if (!$this->isCached('blockbannerz.tpl', $this->getCacheId()))
