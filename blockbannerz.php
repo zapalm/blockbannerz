@@ -32,9 +32,9 @@ class BlockBannerz extends Module
 	public function install()
 	{
 		return parent::install()
-			&& $this->registerHook('displayHeader')
-			&& $this->registerHook('displayTop')
-			&& $this->registerHook('displayHome')
+			&& $this->registerHook('header')
+			&& $this->registerHook('top')
+			&& $this->registerHook('home')
 		;
 	}
 
@@ -115,7 +115,7 @@ class BlockBannerz extends Module
 		}
 	}
 
-	public function hookDisplayTop($params)
+	public function hookTop($params)
 	{
 		$this->_hookCommon();
 
@@ -127,7 +127,7 @@ class BlockBannerz extends Module
 		return $this->display(__FILE__, 'blockbannerz.tpl', $this->getCacheId());
 	}
 
-	public function hookDisplayHome($params)
+	public function hookHome($params)
 	{
 		$this->_hookCommon();
 
@@ -140,7 +140,7 @@ class BlockBannerz extends Module
 		return $this->display(__FILE__, 'blockbannerz.tpl', $this->getCacheId());
 	}
 
-	public function hookDisplayHeader($params)
+	public function hookHeader($params)
 	{
 		$this->context->controller->addCSS($this->_path.'blockbannerz.css', 'all');
 	}
