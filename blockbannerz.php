@@ -17,7 +17,7 @@ class BlockBannerz extends Module
 	{
 		$this->name = 'blockbannerz';
 		$this->tab = 'advertising_marketing';
-		$this->version = '0.2.0';
+		$this->version = '0.3.0';
 		$this->author = 'zapalm';
 		$this->need_instance = 0;
 		$this->bootstrap = false;
