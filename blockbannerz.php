@@ -1,9 +1,9 @@
 <?php
 /**
- * Block Banners: module for PrestaShop 1.5-1.6
+ * Block Banners: module for PrestaShop 1.6
  *
  * @author    zapalm <zapalm@ya.ru>
- * @copyright (c) 2013-2015, zapalm
+ * @copyright (c) 2013-2016, zapalm
  * @link      http://prestashop.modulez.ru/en/ Homepage
  * @license   http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
  */
