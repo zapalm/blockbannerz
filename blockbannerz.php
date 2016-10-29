@@ -25,7 +25,7 @@ class BlockBannerz extends Module
 		parent::__construct();
 
 		$this->displayName = $this->l('Block advertisement banners');
-		$this->description = $this->l('Adds an advertisement block to selected sections of your e-commerce webiste.');
+		$this->description = $this->l('Adds an advertisement block to a different sections of your e-commerce website.');
 	}
 
 	public function install()
