@@ -1,0 +1,42 @@
+/**
+ * Block Banners: module for PrestaShop 1.5-1.6
+ *
+ * @author    zapalm <zapalm@ya.ru>
+ * @copyright (c) 2013-2015, zapalm
+ * @link      http://prestashop.modulez.ru/en/ Homepage
+ * @license   http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
+ */
+
+.blockbannerz_top {
+    padding-top: 5px;
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.blockbannerz_top img {
+    width: 100%;
+}
+
+.blockbannerz_home {
+    clear: both;
+    float: left;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+    width: 100%;
+}
+
+.blockbannerz_home img {
+    float: left;
+    width: 50%;
+}
+
+.blockbannerz_home .left {
+    padding-right: 1px;
+}
+
+.blockbannerz_home .right {
+    padding-left: 1px;
+}

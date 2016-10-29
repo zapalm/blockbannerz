@@ -103,44 +103,27 @@ class BlockBannerz extends Module
 		';
 	}
 
-	private function _hookCommon()
-	{
-		if (!$this->isCached('blockbannerz.tpl', $this->getCacheId()))
-		{
-			$this->smarty->assign(array(
-				'top' => false,
-				'home' => false,
-			));
-		}
-	}
-
 	public function hookTop($params)
 	{
-		$this->_hookCommon();
-
 		$this->smarty->assign(array(
-			'top' => true,
 			'image_top' => $this->_path.'img/top.jpg',
 		));
 
-		return $this->display(__FILE__, 'blockbannerz.tpl', $this->getCacheId());
+		return $this->display(__FILE__, 'views/hook/top.tpl');
 	}
 
 	public function hookHome($params)
 	{
-		$this->_hookCommon();
-
 		$this->smarty->assign(array(
-			'home' => true,
 			'image_home1' => $this->_path.'img/home1.jpg',
 			'image_home2' => $this->_path.'img/home2.jpg',
 		));
 
-		return $this->display(__FILE__, 'blockbannerz.tpl', $this->getCacheId());
+		return $this->display(__FILE__, 'views/hook/home.tpl');
 	}
 
 	public function hookHeader($params)
 	{
-		$this->context->controller->addCSS($this->_path.'blockbannerz.css', 'all');
+		$this->context->controller->addCSS($this->_path . 'views/css/blockbannerz.css', 'all');
 	}
 }
