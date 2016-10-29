@@ -9,7 +9,11 @@
 
 <!-- MODULE blockbannerz -->
 <div class="col-xs-12 col-sm-12 blockbannerz_home">
-	<img class="left" src="{$image_home1}" alt="" title="" />
-	<img class="right" src="{$image_home2}" alt="" title="" />
+	<div class="left">
+		<img src="{$image_home1}" alt="" title="" />
+	</div>
+	<div class="right">
+		<img src="{$image_home2}" alt="" title="" />
+	</div>
 </div>
 <!-- /MODULE blockbannerz -->

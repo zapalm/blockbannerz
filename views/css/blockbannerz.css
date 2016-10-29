@@ -30,13 +30,17 @@
 
 .blockbannerz_home img {
     float: left;
-    width: 50%;
+    width: 100%;
 }
 
 .blockbannerz_home .left {
+    float: left;
     padding-right: 1px;
+    width: 50%;
 }
 
 .blockbannerz_home .right {
+    float: left;
     padding-left: 1px;
+    width: 50%;
 }
